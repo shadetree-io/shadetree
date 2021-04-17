@@ -22,7 +22,7 @@ const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const spawn = require('child_process').spawn
 const uglify = require('gulp-uglify-es').default
-const highlight = require('gulp-prism');              // mcdaniel: for Prettydocs theme
+const highlight = require('gulp-prism')              // mcdaniel: for Prettydocs theme
 
 // Relative paths function
 function pathsConfig(appName) {
