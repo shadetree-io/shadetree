@@ -339,8 +339,8 @@ CORS_URLS_REGEX = r"^/api/.*$"
 # Your stuff...
 # ------------------------------------------------------------------------------
 
-# Bored Bettie
-WAGTAIL_SITE_NAME = "Bored Bettie"
+# Shade Tree
+WAGTAIL_SITE_NAME = "Shade Tree"
 WAGTAILIMAGES_FEATURE_DETECTION_ENABLED = False
 
 # Note that the django-storages Amazon S3 backends

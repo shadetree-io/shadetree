@@ -1,7 +1,7 @@
-<h1 class="header-logo">
-  <a href="">
+{% load static i18n %}<h1 class="header-logo">
+  <a href="/">
     {% block navigation_logo %}
-    <img id="logo" class="logo" src="https://cdn.academiacentral.org/logo.png" alt="alt logo"/>
+    <img id="logo" class="logo" src="{% static 'images/logo.png' %}" alt="alt logo"/>
     {% endblock navigation_logo %}
   </a>
 </h1>

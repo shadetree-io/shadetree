@@ -1,5 +1,5 @@
 """
-ASGI config for Bored Bettie project.
+ASGI config for Shade Tree project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
