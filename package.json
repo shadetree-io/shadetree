@@ -17,6 +17,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.2",
     "gulp-uglify-es": "^1.0.4",
+    "gulp-prism": "^1.2.0",
     "pixrem": "^5.0.0"
   },
   "engines": {

@@ -18,6 +18,15 @@ Running Locally
 
 .. code-block:: bash
 
+  #Python requirements
+  pip3 install -r /Users/mcdaniel/github/lpm0073/shadetrees.io/shadetrees/requirements/local.txt
+
+  # compile static assets
+  cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
+  source venv/bin/activate
+  cd shadetrees
+  python manage.py collectstatic
+
   # 1. start a PostgreSQL daemon in a new terminal window
   pg_ctl -D /usr/local/var/postgres/data -l logfile start
 
