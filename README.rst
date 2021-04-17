@@ -18,6 +18,10 @@ Running Locally
 
 .. code-block:: bash
 
+  # global packages on your macOS dev machine.
+  brew update
+  brew upgrade
+
   #Python requirements
   pip3 install -r /Users/mcdaniel/github/lpm0073/shadetrees.io/shadetrees/requirements/local.txt
 
@@ -25,7 +29,12 @@ Running Locally
   cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
   source venv/bin/activate
   cd shadetrees
+  npm run build
   python manage.py collectstatic
+
+  # front-end stuff
+  # note that gulp-sass requires XCode
+  npm install
 
   # 1. start a PostgreSQL daemon in a new terminal window
   pg_ctl -D /usr/local/var/postgres/data -l logfile start
@@ -42,11 +51,11 @@ Running Locally
   # alternate startup method for Celery
   #python manage.py celeryd -l info
 
-  # 4. launch a local web server in a new window at http://0.0.0.0:8000
+  # 4. launch a local web server in a new window at http://127.0.0.1:8000
   cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
   source venv/bin/activate
   cd shadetrees
-  uvicorn config.asgi:application --host 0.0.0.0 --reload
+  python manage.py runserver
 
   # in the event of problems check if anything is already on port 8000
   sudo lsof -i:8000
