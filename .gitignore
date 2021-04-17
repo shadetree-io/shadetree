@@ -7,7 +7,8 @@ logfile
 # results of asset compilation
 *.min.css
 *.min.js
-shadetrees/static/js/vendors.js
+vendors.js
+project.css
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
