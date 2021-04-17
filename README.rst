@@ -1,7 +1,7 @@
-Shade Trees
+ShadeTree
 ============
 
-Everything you ever wanted to know about open source configuration parameters.
+Everything you ever wanted to know about an open source configuration parameter.
 
 .. image:: https://img.shields.io/badge/hack.d-Lawrence%20McDaniel-orange.svg
      :target: https://lawrencemcdaniel.com
