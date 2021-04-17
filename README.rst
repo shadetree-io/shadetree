@@ -58,6 +58,14 @@ http://0.0.0.0:8000/admin/
 http://0.0.0.0:8000/cms_admin/
 
 
+Bootstrap Theme
+---------------
+
+PrettyDocs: https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/
+live demo: https://themes.3rdwavemedia.com/demo/prettydocs/
+cool t-shirts: https://made4dev.com/
+
+
 Production
 ----------
 

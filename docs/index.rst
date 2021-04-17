@@ -1,9 +1,9 @@
-.. Bored Bettie documentation master file, created by
+.. Shade Tree documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Bored Bettie's documentation!
+Welcome to Shade Tree's documentation!
 ======================================================================
 
 .. toctree::

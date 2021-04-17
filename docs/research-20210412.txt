@@ -1,0 +1,78 @@
+Wassim:
+
+sandbox
+vanilla build
+
+
+static code analysis
+AST
+Abstract Syntax Tree
+Syntax Tree
+
+I. walk code and create ast
+	https://stackoverflow.com/questions/33506902/python-extracting-editing-all-constants-involved-in-a-function-via-ast
+	import ast
+	from inspect import getsource
+	from operator import attrgetter
+
+II. for any module, trace origins of its constants
+	https://metallapan.se/post/using-the-ast-to-hack-constants-into-python/
+
+III. introspect data in the source file
+	The ast module has a couple of functions for inspecting nodes:
+		ast.iter_fields() iterates over the fields defined for a node.
+		ast.get_docstring() gets the docstring of a FunctionDef, ClassDef or Module node.
+		ast.dump() returns a string showing the node and any children. See also the pretty printer used in this guide.
+
+IV. A command-line utility for querying Python AST's using XPath syntax
+	astpath:
+		https://pypi.org/project/astpath/
+		https://github.com/hchasestevens/astpath
+		from astpath import search
+
+	astsearch:
+		https://pypi.org/project/astsearch/
+		https://astsearch.readthedocs.io/en/latest/
+
+V. Finding constants within AST
+	ast.Constant
+	https://www.programcreek.com/python/example/126609/ast.Constant
+
+VI. get all environment and settings variables
+	import os
+	print(os.environ)
+
+	import settings
+	print(settings)
+
+
+VII. introspection with Django
+	print_settings and diffsettings
+	https://django-extensions.readthedocs.io/en/latest/print_settings.html
+
+	note example to get a list of installed apps
+	https://hakibenita.com/automating-the-boring-stuff-in-django-using-the-check-framework
+
+	https://stackoverflow.com/questions/25459319/list-quickly-all-settings-of-your-django-project
+
+VIII. awesome python code analysis tools
+	Tools of static analysis, linters and code quality checkers. Also see
+	https://github.com/vinta/awesome-python#code-analysis
+
+IX. Python Decouple
+	Decouple helps you to organize your settings so that you can change parameters without having to redeploy your app.
+	https://github.com/henriquebastos/python-decouple
+
+X. Static code analysis
+	https://github.com/analysis-tools-dev/static-analysis
+	https://github.com/vinta/awesome-python
+
+
+
+ast_scope: This package is an implementation of Python's lexical scoping rules. It's interface is simple, you pass in an AST object to the annotate function, and it provides a mapping from each node in the tree that represents a symbol to the containing scope.
+
+astdump: Get information from Python module without executing it. This is a tool and a library to work with Abstract Syntax Tree (AST) of source code in Python. It can be used to explore AST, inspect nodes and process them. When used from command line, astdump.py can generate setup.py for your module or print its structure.
+
+Green Tree Snakes
+https://greentreesnakes.readthedocs.io/en/latest/nodes.html
+

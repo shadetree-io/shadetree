@@ -27,7 +27,7 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "Bored Bettie"
+project = "Shade Tree"
 copyright = """2021, Lawrence McDaniel"""
 author = "Lawrence McDaniel"
 
