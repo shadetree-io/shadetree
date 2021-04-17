@@ -3,9 +3,9 @@ Running Locally
 
 .. code-block:: bash
 
-    cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
+    cd /Users/mcdaniel/github/lpm0073/shadetree/
     source venv/bin/activate
-    cd shadetrees
+    cd shadetree
 
     # check if anything is already on port 8000
     sudo lsof -i:8000
@@ -37,7 +37,7 @@ Prerequisite DB Stuff
 
     psql -h localhost -d postgres
     postgres=# create user dev with encrypted password 'SillyPassword$1';
-    postgres=# create database shadetrees with owner = dev;
+    postgres=# create database shadetree with owner = dev;
 
 
 Prerequisite Redis / Celery Stuff
@@ -80,7 +80,7 @@ Project Setup Stuff
     pre-commit install
 
     # add these to config/settings/base.py
-    DATABASE_URL=postgres://dev:SillyPassword$1@127.0.0.1:5432/shadetrees
+    DATABASE_URL=postgres://dev:SillyPassword$1@127.0.0.1:5432/shadetree
     CELERY_BROKER_URL=redis://localhost:6379/0
 
     python manage.py migrate

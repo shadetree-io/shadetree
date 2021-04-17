@@ -6,8 +6,8 @@ from pathlib import Path
 import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
-# shadetrees/
-APPS_DIR = ROOT_DIR / "shadetrees"
+# shadetree/
+APPS_DIR = ROOT_DIR / "shadetree"
 env = environ.Env()
 
 # READ_DOT_ENV_FILE = env.bool("DJANGO_READ_DOT_ENV_FILE", default=False)
@@ -42,7 +42,7 @@ LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
-DATABASES = {"default": env.db("DATABASE_URL", default="postgres:///shadetrees")}
+DATABASES = {"default": env.db("DATABASE_URL", default="postgres:///shadetree")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -84,13 +84,13 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "shadetrees.users.apps.UsersConfig",
-    "shadetrees.api.contributor",
-    "shadetrees.api.curator",
-    "shadetrees.api.dashboard",
-    "shadetrees.api.feed",
-    "shadetrees.api.user_profile",
-    "shadetrees.api.user_signals",
+    "shadetree.users.apps.UsersConfig",
+    "shadetree.api.contributor",
+    "shadetree.api.curator",
+    "shadetree.api.dashboard",
+    "shadetree.api.feed",
+    "shadetree.api.user_profile",
+    "shadetree.api.user_signals",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -111,7 +111,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # MIGRATIONS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#migration-modules
-MIGRATION_MODULES = {"sites": "shadetrees.contrib.sites.migrations"}
+MIGRATION_MODULES = {"sites": "shadetree.contrib.sites.migrations"}
 
 # AUTHENTICATION
 # ------------------------------------------------------------------------------
@@ -211,7 +211,7 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "shadetrees.utils.context_processors.settings_context",
+                "shadetree.utils.context_processors.settings_context",
             ],
         },
     }
@@ -319,9 +319,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "shadetrees.users.adapters.AccountAdapter"
+ACCOUNT_ADAPTER = "shadetree.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = "shadetrees.users.adapters.SocialAccountAdapter"
+SOCIALACCOUNT_ADAPTER = "shadetree.users.adapters.SocialAccountAdapter"
 
 # django-rest-framework
 # -------------------------------------------------------------------------------

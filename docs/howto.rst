@@ -4,7 +4,7 @@ How To - Project Documentation
 Get Started
 ----------------------------------------------------------------------
 
-Documentation can be written as rst files in the `shadetrees/docs/_source`.
+Documentation can be written as rst files in the `shadetree/docs/_source`.
 
 
 To build and serve docs, use the command:
@@ -12,7 +12,7 @@ To build and serve docs, use the command:
     
         make livehtml 
     
-from inside the `shadetrees/docs` directory. 
+from inside the `shadetree/docs` directory. 
 
 
 Changes to files in `docs/_source` will be picked up and reloaded automatically.

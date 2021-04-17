@@ -23,18 +23,18 @@ Running Locally
   brew upgrade
 
   #Python requirements
-  pip3 install -r /Users/mcdaniel/github/lpm0073/shadetrees.io/shadetrees/requirements/local.txt
+  pip3 install -r /Users/mcdaniel/github/lpm0073/shadetree/shadetree/requirements/local.txt
 
-  # compile static assets
-  cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
-  source venv/bin/activate
-  cd shadetrees
-  npm run build
-  python manage.py collectstatic
-
-  # front-end stuff
+  # front-end requirements
   # note that gulp-sass requires XCode
   npm install
+
+  # compile static assets
+  cd /Users/mcdaniel/github/lpm0073/shadetree/
+  source venv/bin/activate
+  cd shadetree
+  npm run build
+  cat <(echo "yes") - | python manage.py collectstatic
 
   # 1. start a PostgreSQL daemon in a new terminal window
   pg_ctl -D /usr/local/var/postgres/data -l logfile start
@@ -43,27 +43,27 @@ Running Locally
   redis-server /usr/local/etc/redis.conf
 
   # 3. start a celery worker in a separate terminal window
-  cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
+  cd /Users/mcdaniel/github/lpm0073/shadetree/
   source venv/bin/activate
-  cd shadetrees
+  cd shadetree
   #export CELERY_BROKER_URL=redis://localhost:6379/0
   celery -A config.celery_app worker --loglevel=info
   # alternate startup method for Celery
   #python manage.py celeryd -l info
 
   # 4. launch a local web server in a new window at http://127.0.0.1:8000
-  cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
+  cd /Users/mcdaniel/github/lpm0073/shadetree/
   source venv/bin/activate
-  cd shadetrees
+  cd shadetree
   python manage.py runserver
 
   # 5. setup watches / auto browser reload
   npm run dev
 
   # run manage.py
-  cd /Users/mcdaniel/github/lpm0073/shadetrees.io/
+  cd /Users/mcdaniel/github/lpm0073/shadetree/
   source venv/bin/activate
-  cd shadetrees
+  cd shadetree
   ./manage.py -h
 
 Pages
@@ -108,28 +108,28 @@ but requires additional configuration to handle IAM based authentication. This c
 
   sudo apt-get install nginx mysql-server python3-pip python3.6-dev libmysqlclient-dev ufw python3-paramiko python3-venv curl libpq-dev boto3
 
-  git clone git@github-admin:lpm0073/shadetrees.io.git
+  git clone git@github-admin:lpm0073/shadetree.git
 
   # setup app logging
-  sudo mkdir /var/log/shadetrees.io
-  sudo chown ubuntu /var/log/shadetrees.io
-  sudo chgrp ubuntu /var/log/shadetrees.io
+  sudo mkdir /var/log/shadetree
+  sudo chown ubuntu /var/log/shadetree
+  sudo chgrp ubuntu /var/log/shadetree
 
 
   # Python / Django installation
   cd ~
-  sudo rm -r ./shadetrees.io
-  git clone git@github-admin:lpm0073/shadetrees.io.git
+  sudo rm -r ./shadetree
+  git clone git@github-admin:lpm0073/shadetree.git
 
-  python3 -m venv ~/shadetrees.io/venv
-  source ~/shadetrees.io/venv/bin/activate
-  pip3 install -r ~/shadetrees.io/djangoproject/requirements/production.txt
+  python3 -m venv ~/shadetree/venv
+  source ~/shadetree/venv/bin/activate
+  pip3 install -r ~/shadetree/djangoproject/requirements/production.txt
 
   # create and install .env file
 
   # Prepare Django
-  $ cd ~/shadetrees.io
-  $ source ~/shadetrees.io/venv/bin/activate
+  $ cd ~/shadetree
+  $ source ~/shadetree/venv/bin/activate
   (env) $ python djangoproject/manage.py createsuperuser
   (env) $ python djangoproject/manage.py makemigrations
   (env) $ python djangoproject/manage.py migrate
@@ -139,9 +139,9 @@ but requires additional configuration to handle IAM based authentication. This c
 
 
   # Test Gunicorn service
-  $ cd ~/shadetrees.io
-  $ source ~/shadetrees.io/venv/bin/activate
-  (env) $ cd ~/shadetrees.io/djangoproject/
+  $ cd ~/shadetree
+  $ source ~/shadetree/venv/bin/activate
+  (env) $ cd ~/shadetree/djangoproject/
   (env) $ gunicorn --bind 0.0.0.0:8000 config.wsgi:application
   (env) $ deactivate
 
@@ -175,7 +175,7 @@ Running type checks with mypy:
 
 ::
 
-  $ mypy shadetrees
+  $ mypy shadetree
 
 Test coverage
 ^^^^^^^^^^^^^
@@ -211,7 +211,7 @@ To run a celery worker:
 
 .. code-block:: bash
 
-    cd shadetrees
+    cd shadetree
     celery -A config.celery_app worker -l info
 
 Please note: For Celery's import magic to work, it is important *where* the celery commands are run. If you are in the same folder with *manage.py*, you should be right.
