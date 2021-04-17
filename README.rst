@@ -69,15 +69,12 @@ Running Locally
 Pages
 -----
 
-http://0.0.0.0:8000/
-
-http://0.0.0.0:8000/admin/
-
-http://0.0.0.0:8000/cms_admin/
+/admin/
+/cms_admin/
 
 
-Bootstrap Theme
----------------
+Theme Source & Origin
+---------------------
 
 PrettyDocs: https://themes.3rdwavemedia.com/bootstrap-templates/startup/prettydocs-free-bootstrap-theme-for-developers-and-startups/
 live demo: https://themes.3rdwavemedia.com/demo/prettydocs/
