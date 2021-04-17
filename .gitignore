@@ -8,7 +8,6 @@ logfile
 *.min.css
 *.min.js
 shadetrees/static/js/vendors.js
-shadetrees/static/css/project.css
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

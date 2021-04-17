@@ -57,8 +57,8 @@ Running Locally
   cd shadetrees
   python manage.py runserver
 
-  # in the event of problems check if anything is already on port 8000
-  sudo lsof -i:8000
+  # 5. setup watches / auto browser reload
+  npm run dev
 
   # run manage.py
   cd /Users/mcdaniel/github/lpm0073/shadetrees.io/

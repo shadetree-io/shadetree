@@ -11,6 +11,18 @@
 		//Variables//
 ////////////////////////////////
 
+// mcdaniel: 
+// ========================================================================
+// prettdocs
+@import "./prettydocs/styles.scss";
+// fontawesome setup
+// https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+@import "../fontawesome/scss/fontawesome.scss";
+@import "../fontawesome/scss/solid.scss";
+@import "../fontawesome/scss/brands.scss";
+$fa-font-path: "../fontawesome/webfonts";
+// ========================================================================
+
 // Alert colors
 
 $white: #fff;
