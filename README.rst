@@ -1,7 +1,7 @@
 Shade Trees
 ============
 
-Classy, Elegant, Fun!
+Everything you ever wanted to know about open source configuration parameters.
 
 .. image:: https://img.shields.io/badge/hack.d-Lawrence%20McDaniel-orange.svg
      :target: https://lawrencemcdaniel.com

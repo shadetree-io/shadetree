@@ -22,6 +22,7 @@ const rename = require('gulp-rename')
 const sass = require('gulp-sass')
 const spawn = require('child_process').spawn
 const uglify = require('gulp-uglify-es').default
+const highlight = require('gulp-prism');
 
 // Relative paths function
 function pathsConfig(appName) {
@@ -86,6 +87,7 @@ function scripts() {
   return src(`${paths.js}/project.js`)
     .pipe(plumber()) // Checks for errors
     .pipe(uglify()) // Minifies the js
+    .pipe(highlight())  // mcdaniel: pre-tag code blocks at compile time.
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(paths.js))
 }

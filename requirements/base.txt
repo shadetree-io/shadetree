@@ -25,13 +25,5 @@ django-cors-headers==3.7.0 # https://github.com/adamchainz/django-cors-headers
 wagtail==2.12.3
 elasticsearch>=7.0.0,<8.0.0
 
-                # https://docs.wagtail.io/en/stable/advanced_topics/images/animated_gifs.html
-Wand            # https://docs.wand-py.org/en/0.4.2/guide/install.html
-magickwand      # https://pypi.org/project/magickwand/
-
-
-                # image feature detection
-opencv-python   # https://opencv.org/
-
-                # facial recognition
-rustface        # https://github.com/torchbox/rustface-py/
+# for PrettyDocs bootstrap font
+django-fontawesome
