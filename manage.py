@@ -2,8 +2,17 @@
 import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 
 if __name__ == "__main__":
+    # mcdaniel:
+    # this allows us to seamlessly toggle between local (ie "dev") and production settings.
+    # .env contains the DJANGO_SETTINGS_MODULE value:
+    #           "config.settings.local" for dev,
+    #           "config.settings.production" for AWS Ubuntu
+    # reference: https://github.com/jpadilla/django-dotenv
+    # this needs to be placed immediately above os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
+    load_dotenv()
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
 
     try:
