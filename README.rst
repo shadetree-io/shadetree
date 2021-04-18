@@ -81,6 +81,12 @@ live demo: https://themes.3rdwavemedia.com/demo/prettydocs/
 cool t-shirts: https://made4dev.com/
 
 
+Setting up AWS Cloudfront
+-------------------------
+
+https://blog.impress.ai/index.php/2020/02/19/how-to-serve-static-files-via-cloudfront-private-media-files-via-s3-in-django/
+
+
 Production
 ----------
 
