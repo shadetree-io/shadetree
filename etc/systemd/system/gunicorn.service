@@ -1,0 +1,16 @@
+[Unit]
+Description=gunicorn service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/shadetrees.io/shadetree/
+ExecStart=/home/ubuntu/shadetrees.io/venv/bin/gunicorn \
+         --access-logfile - \
+         --workers 3 \
+         --bind unix:/home/ubuntu/shadetrees.io/etc/systemd/system/gunicorn.sock \
+         config.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
