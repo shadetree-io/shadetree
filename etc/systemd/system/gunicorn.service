@@ -9,7 +9,7 @@ WorkingDirectory=/home/ubuntu/shadetrees.io/shadetree/
 ExecStart=/home/ubuntu/shadetrees.io/venv/bin/gunicorn \
          --access-logfile - \
          --workers 3 \
-         --bind unix:/home/ubuntu/shadetrees.io/etc/systemd/system/gunicorn.sock \
+         --bind unix:/home/ubuntu/shadetrees.io/shadetree/etc/systemd/system/gunicorn.sock \
          config.wsgi:application
 
 [Install]
