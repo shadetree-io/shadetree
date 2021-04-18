@@ -15,8 +15,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^1.0.4",
+    "jquery": "^3.6.0",
     "node-sass": "^5.0.0",
-    "pixrem": "^5.0.0"
+    "pixrem": "^5.0.0",
+    "popper.js": "^1.16.1"
   },
   "engines": {
     "node": ">=8"

@@ -3,6 +3,7 @@
 # Misc local development files
 logfile
 .env
+.env.production
 
 # results of asset compilation
 *.min.css
