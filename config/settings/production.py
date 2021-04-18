@@ -43,6 +43,16 @@ CACHES = {
             # https://github.com/jazzband/django-redis#memcached-exceptions-behavior
             "IGNORE_EXCEPTIONS": True,
         },
+    },
+    'collectfast': {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": env("REDIS_URL"),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            # Mimicing memcache behavior.
+            # https://github.com/jazzband/django-redis#memcached-exceptions-behavior
+            "IGNORE_EXCEPTIONS": True,
+        },
     }
 }
 
@@ -212,3 +222,10 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# https://github.com/antonagestam/collectfast
+COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
+INSTALLED_APPS += ["collectfast"]  # noqa F405
+COLLECTFAST_ENABLED = True
+COLLECTFAST_CACHE = 'collectfast'
+COLLECTFAST_THREADS = 20
