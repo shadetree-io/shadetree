@@ -222,10 +222,3 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-
-# https://github.com/antonagestam/collectfast
-COLLECTFAST_STRATEGY = "collectfast.strategies.boto3.Boto3Strategy"
-INSTALLED_APPS += ["collectfast"]  # noqa F405
-COLLECTFAST_ENABLED = True
-COLLECTFAST_CACHE = 'collectfast'
-COLLECTFAST_THREADS = 20
