@@ -30,7 +30,7 @@ server {
         # i ran into problems getting the gunicorn socket to create itself in /run/gunicorn.sock
         # the problem seemed to be permissions related but i wasn't able to resolve. however, it seems
         # that the socket can be placed anywhere, so ....
-        proxy_pass http://unix:/home/ubuntu/admin.roverbyopenstax.org/etc/systemd/system/gunicorn.sock;
+        proxy_pass http://unix:/home/ubuntu/shadetrees.io/shadetree/etc/systemd/system/gunicorn.sock;
    }
 
     listen 80;
