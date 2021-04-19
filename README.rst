@@ -104,6 +104,7 @@ but requires additional configuration to handle IAM based authentication. This c
   sudo mkdir /var/log/shadetree
   sudo chown ubuntu /var/log/shadetree
   sudo chgrp ubuntu /var/log/shadetree
+  sudo chmod 664 /var/log/shadetree
 
   # Ubuntu setup
   # =================================================

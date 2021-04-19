@@ -167,11 +167,14 @@ INSTALLED_APPS = ["collectfast"] + INSTALLED_APPS  # noqa F405
 
 LOGGING = {
     "version": 1,
-    "disable_existing_loggers": True,
+    "disable_existing_loggers": False,
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
             "%(process)d %(thread)d %(message)s"
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
         }
     },
     "handlers": {
@@ -179,23 +182,42 @@ LOGGING = {
             "level": "DEBUG",
             "class": "logging.StreamHandler",
             "formatter": "verbose",
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': '/var/log/shadetree/app.log',
         }
     },
-    "root": {"level": "INFO", "handlers": ["console"]},
+    "root": {
+        "level": "DEBUG", 
+        "handlers": ["file", "console"],
+            "propagate": True
+    },
     "loggers": {
         "django.db.backends": {
             "level": "ERROR",
-            "handlers": ["console"],
-            "propagate": False,
+            "handlers": ["file", "console"],
+            "propagate": True
         },
         # Errors logged by the SDK itself
-        "sentry_sdk": {"level": "ERROR", "handlers": ["console"], "propagate": False},
+        "sentry_sdk": {
+                "level": "ERROR", 
+                "handlers": ["file", "console"], 
+                "propagate": False
+            },
         "django.security.DisallowedHost": {
             "level": "ERROR",
-            "handlers": ["console"],
-            "propagate": False,
+            "handlers": ["file", "console"],
+            "propagate": True
         },
-    },
+        "": {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file'],
+            "propagate": True
+        }
+    }
 }
 
 # Sentry
