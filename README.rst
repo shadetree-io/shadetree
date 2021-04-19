@@ -87,6 +87,20 @@ https://blog.impress.ai/index.php/2020/02/19/how-to-serve-static-files-via-cloud
 Production
 ----------
 
+Monitoring
+
+.. code-block:: bash
+
+  # Django
+  sudo tail -F /var/log/shadetree/app.log
+
+  # Nginx
+  sudo tail -F /var/log/nginx/error.log
+  sudo tail -F /var/log/nginx/access.log
+
+  # Gunicorn
+  sudo systemctl status gunicorn  
+
 See: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
 
 - Nginx
