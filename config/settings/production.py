@@ -147,12 +147,17 @@ ADMIN_URL = env("DJANGO_ADMIN_URL")
 # Anymail
 # ------------------------------------------------------------------------------
 # https://anymail.readthedocs.io/en/stable/installation/#installing-anymail
-INSTALLED_APPS += ["anymail"]  # noqa F405
+#INSTALLED_APPS += ["anymail"]  # noqa F405
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
 # https://anymail.readthedocs.io/en/stable/esps/amazon_ses/
-EMAIL_BACKEND = "anymail.backends.amazon_ses.EmailBackend"
-ANYMAIL = {}
+#EMAIL_BACKEND = "anymail.backends.amazon_ses.EmailBackend"
+#ANYMAIL = {}
+
+# AWS SES
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_SES_REGION_NAME = env("AWS_SES_REGION_NAME", default="us-west-2")
+AWS_SES_REGION_ENDPOINT = env("AWS_SES_REGION_NAME", default="email.us-west-2.amazonaws.com")
 
 # Collectfast
 # ------------------------------------------------------------------------------
@@ -164,7 +169,6 @@ INSTALLED_APPS = ["collectfast"] + INSTALLED_APPS  # noqa F405
 # https://docs.djangoproject.com/en/dev/ref/settings/#logging
 # See https://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -188,34 +192,38 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'formatter': 'file',
             'filename': '/var/log/shadetree/app.log',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            "formatter": "verbose",
         }
     },
     "root": {
         "level": "DEBUG", 
-        "handlers": ["file", "console"],
+        "handlers": ["file", "console", "mail_admins"],
             "propagate": True
     },
     "loggers": {
         "django.db.backends": {
             "level": "ERROR",
-            "handlers": ["file", "console"],
-            "propagate": True
+            "handlers": ["file", "console", "mail_admins"],
+            "propagate": False
         },
         # Errors logged by the SDK itself
         "sentry_sdk": {
                 "level": "ERROR", 
-                "handlers": ["file", "console"], 
+                "handlers": ["file", "console", "mail_admins"], 
                 "propagate": False
             },
         "django.security.DisallowedHost": {
             "level": "ERROR",
-            "handlers": ["file", "console"],
-            "propagate": True
+            "handlers": ["file", "console", "mail_admins"],
+            "propagate": False
         },
         "": {
             'level': 'DEBUG',
-            'handlers': ['console', 'file'],
-            "propagate": True
+            'handlers': ['console', 'file', "mail_admins"] 
         }
     }
 }

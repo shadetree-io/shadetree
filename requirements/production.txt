@@ -12,6 +12,11 @@ sentry-sdk==0.20.3  # https://github.com/getsentry/sentry-python
 django-storages[boto3]==1.11.1  # https://github.com/jschneier/django-storages
 django-anymail[amazon_ses]==8.2  # https://github.com/anymail/django-anymail
 
+# AWS SES 
+# ------------------------------------------------------------------------------
+boto3
+django-ses
+
 # required on Ubuntu 18.04 but not on 20.04
 mysqlclient
 setuptools-rust
