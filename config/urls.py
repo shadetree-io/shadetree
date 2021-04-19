@@ -10,6 +10,9 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
+from django_ses.views import SESEventWebhookView
+from django.views.decorators.csrf import csrf_exempt
+
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     path(
@@ -26,6 +29,10 @@ urlpatterns = [
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism
     re_path(r"", include(wagtail_urls)),
+
+    # mcdaniel: for django-ses
+    url(r'^ses/event-webhook/$', SESEventWebhookView.as_view(), name='handle-event-webhook'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development
@@ -64,3 +71,6 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+# mcdaniel: SES Sending Stats
+urlpatterns += (url(r'^admin/django-ses/', include('django_ses.urls')),)

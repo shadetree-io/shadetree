@@ -15,7 +15,7 @@ django-anymail[amazon_ses]==8.2  # https://github.com/anymail/django-anymail
 # AWS SES 
 # ------------------------------------------------------------------------------
 boto3
-django-ses
+django-ses[events]
 
 # required on Ubuntu 18.04 but not on 20.04
 mysqlclient
