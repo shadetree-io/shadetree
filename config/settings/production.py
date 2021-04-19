@@ -157,7 +157,7 @@ ADMIN_URL = env("DJANGO_ADMIN_URL")
 # AWS SES
 EMAIL_BACKEND = 'django_ses.SESBackend'
 AWS_SES_REGION_NAME = env("AWS_SES_REGION_NAME", default="us-west-2")
-AWS_SES_REGION_ENDPOINT = env("AWS_SES_REGION_NAME", default="email.us-west-2.amazonaws.com")
+AWS_SES_REGION_ENDPOINT = env("AWS_SES_REGION_ENDPOINT", default="email.us-west-2.amazonaws.com")
 #AWS_SES_ACCESS_KEY_ID = env("DJANGO_EMAIL_HOST_USER")
 #AWS_SES_SECRET_ACCESS_KEY = env("DJANGO_EMAIL_HOST_PASSWORD")
 INSTALLED_APPS = ["django_ses"] + INSTALLED_APPS  # noqa F405
