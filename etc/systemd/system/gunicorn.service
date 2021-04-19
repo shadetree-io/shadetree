@@ -1,5 +1,6 @@
 [Unit]
-Description=gunicorn service
+Description=gunicorn daemon
+Requires=gunicorn.socket
 After=network.target
 
 [Service]
@@ -9,7 +10,7 @@ WorkingDirectory=/home/ubuntu/shadetrees.io/shadetree/
 ExecStart=/home/ubuntu/shadetrees.io/venv/bin/gunicorn \
          --access-logfile - \
          --workers 3 \
-         --bind unix:/home/ubuntu/shadetrees.io/shadetree/etc/systemd/system/gunicorn.sock \
+         --bind unix:/run/gunicorn.sockk \
          config.wsgi:application
 
 [Install]

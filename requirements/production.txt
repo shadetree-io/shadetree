@@ -14,4 +14,4 @@ django-anymail[amazon_ses]==8.2  # https://github.com/anymail/django-anymail
 
 # required on Ubuntu 18.04 but not on 20.04
 mysqlclient
-setuptools-rust>=1.41.0
+setuptools-rust

@@ -46,11 +46,8 @@ Running Locally
   cd /Users/mcdaniel/github/lpm0073/shadetree/
   source venv/bin/activate
   cd shadetree
-  #export CELERY_BROKER_URL=redis://localhost:6379/0
   celery -A config.celery_app worker --loglevel=info
-  # alternate startup method for Celery
-  #python manage.py celeryd -l info
-
+  
   # 4. launch a local web server in a new window at http://127.0.0.1:8000
   cd /Users/mcdaniel/github/lpm0073/shadetree/
   source venv/bin/activate
@@ -89,6 +86,8 @@ https://blog.impress.ai/index.php/2020/02/19/how-to-serve-static-files-via-cloud
 
 Production
 ----------
+
+See: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-18-04
 
 - Nginx
 
