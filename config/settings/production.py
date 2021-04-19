@@ -161,7 +161,7 @@ AWS_SES_REGION_ENDPOINT = env("AWS_SES_REGION_ENDPOINT", default="email.us-west-
 #AWS_SES_ACCESS_KEY_ID = env("DJANGO_EMAIL_HOST_USER")
 #AWS_SES_SECRET_ACCESS_KEY = env("DJANGO_EMAIL_HOST_PASSWORD")
 AWS_SES_AUTO_THROTTLE = None
-INSTALLED_APPS = ["django.contrib.admin", "django_ses"] + INSTALLED_APPS  # noqa F405
+INSTALLED_APPS = ["django_ses"] + INSTALLED_APPS  # noqa F405
 
 # Collectfast
 # ------------------------------------------------------------------------------
