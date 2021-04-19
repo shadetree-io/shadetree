@@ -123,9 +123,6 @@ but requires additional configuration to handle IAM based authentication. This c
   # MySQL setup
   # =================================================
 
-  mysql -h wordpress-sql.cp6gb73qx6d7.us-west-2.rds.amazonaws.com -u root -p
-  pwd:	67#s[P7(eG2,>9
-
   CREATE DATABASE shadetree CHARACTER SET 'utf8';
   CREATE USER shadetree;
   GRANT ALL ON shadetree.* TO 'shadetree'@'%' IDENTIFIED BY '6xD!cu@Ntz64BDP!bZo*CLsV';
