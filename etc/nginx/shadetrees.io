@@ -1,7 +1,6 @@
 server {
    # the port your site will be served on
    # the domain name it will serve for
-    listen 80 default;
    server_name shadetrees.io;
    charset     utf-8;
 
@@ -30,5 +29,24 @@ server {
    }
 
 
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/shadetrees.io/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/shadetrees.io/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
 }
 
+server {
+    if ($host = shadetrees.io) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80 default;
+   server_name shadetrees.io;
+    return 404; # managed by Certbot
+
+
+}
