@@ -28,16 +28,20 @@
   sudo apt update
   sudo apt-get install nginx mysql-server python3-pip python3-dev python3-paramiko python3-venv curl libpq-dev npm libmysqlclient-dev
 
-
   # ElasticSearch (EC2 large only)
   # =================================================
   curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
   echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
   sudo apt update
   sudo apt install elasticsearch
+  ~/shadetrees.io/scripts/install_elasticsearch.sh
   # copy elasticsearch.yml once we have this ready.
   #sudo systemctl start elasticsearch
   #sudo systemctl enable elasticsearch
+
+  # Celery
+  # =================================================
+  ~/shadetrees.io/scripts/install_celery.sh
 
   # Django environment
   # =================================================
@@ -63,8 +67,6 @@
   #curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
   #echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
   #sudo apt-get update && sudo apt-get install yarn
-
-
 
   # Gunicorn setup
   # =================================================
