@@ -262,3 +262,15 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# Wagtail
+#
+#    'default': {
+#        'BACKEND': 'wagtail.search.backends.elasticsearch5',
+#        'URLS': ['http://localhost:9200'],
+#        'INDEX': 'wagtail',
+#        'TIMEOUT': 5,
+#        'OPTIONS': {},
+#        'INDEX_SETTINGS': {},
+#    }
+#}

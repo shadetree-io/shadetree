@@ -105,10 +105,31 @@ See: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-
 
 - Nginx
 
-- ElasticSearch: https://www.elastic.co/downloads/elasticsearch
+- ElasticSearch: https://docs.wagtail.io/en/stable/topics/search/backends.html
 
-- Elasticsearch: The Elasticsearch backend is compatible with Amazon Elasticsearch Service,
-but requires additional configuration to handle IAM based authentication. This can be done with the requests-aws4auth package along with the following configuration: https://docs.wagtail.io/en/stable/topics/search/backends.html#wagtailsearch-backends-elasticsearch
+The Elasticsearch backend is compatible with Amazon Elasticsearch Service, but requires additional configuration to handle IAM based authentication. This can be done with the requests-aws4auth package along with the following configuration:
+
+.. code-block:: python
+  from requests_aws4auth import AWS4Auth
+
+  WAGTAILSEARCH_BACKENDS = {
+      'default': {
+          'BACKEND': 'wagtail.search.backends.elasticsearch5',
+          'INDEX': 'wagtail',
+          'TIMEOUT': 5,
+          'HOSTS': [{
+              'host': 'YOURCLUSTER.REGION.es.amazonaws.com',
+              'port': 443,
+              'use_ssl': True,
+              'verify_certs': True,
+              'http_auth': AWS4Auth('ACCESS_KEY', 'SECRET_KEY', 'REGION', 'es'),
+          }],
+          'OPTIONS': {
+              'connection_class': RequestsHttpConnection,
+          },
+      }
+  }
+
 
 - Boto3: anything to do with this?
 
@@ -139,6 +160,16 @@ but requires additional configuration to handle IAM based authentication. This c
   CREATE DATABASE shadetree CHARACTER SET 'utf8';
   CREATE USER shadetree;
   GRANT ALL ON shadetree.* TO 'shadetree'@'%' IDENTIFIED BY '6xD!cu@Ntz64BDP!bZo*CLsV';
+
+  # ElasticSearch (EC2 large only)
+  # =================================================
+  curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+  echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+  sudo apt update
+  sudo apt install elasticsearch
+  # copy elasticsearch.yml once we have this ready.
+  sudo systemctl start elasticsearch
+  sudo systemctl enable elasticsearch
 
   # Django environment
   # =================================================
