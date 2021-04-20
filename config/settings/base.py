@@ -242,16 +242,16 @@ X_FRAME_OPTIONS = "DENY"
 # EMAIL
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
-EMAIL_BACKEND = env(
-    "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
-)
+#EMAIL_BACKEND = env(
+#    "DJANGO_EMAIL_BACKEND", default="django.core.mail.backends.smtp.EmailBackend"
+#)
 # https://docs.djangoproject.com/en/dev/ref/settings/#email-timeout
-EMAIL_TIMEOUT = 5
-EMAIL_HOST = env("DJANGO_EMAIL_HOST", default="email-smtp.us-west-2.amazonaws.com")
-EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD", default="See .env file")
-EMAIL_HOST_USER = env("DJANGO_EMAIL_HOST_USER", default="See .env file")
-EMAIL_PORT = env("DJANGO_EMAIL_PORT", default=587)
-EMAIL_USE_TLS = env("DJANGO_EMAIL_USE_TLS", default=True)
+#EMAIL_TIMEOUT = 5
+#EMAIL_HOST = env("DJANGO_EMAIL_HOST", default="email-smtp.us-west-2.amazonaws.com")
+#EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD", default="See .env file")
+#EMAIL_HOST_USER = env("DJANGO_EMAIL_HOST_USER", default="See .env file")
+#EMAIL_PORT = env("DJANGO_EMAIL_PORT", default=587)
+#EMAIL_USE_TLS = env("DJANGO_EMAIL_USE_TLS", default=True)
 
 # ADMIN
 # ------------------------------------------------------------------------------

@@ -130,9 +130,7 @@ but requires additional configuration to handle IAM based authentication. This c
   sudo apt update
   sudo apt install python3.9
   sudo apt update
-  sudo apt-get install nginx mysql-server python3-pip python3-dev ufw python3-paramiko python3-venv curl libpq-dev npm 
-  sudo apt update
-  sudo apt-get install libmysqlclient-dev
+  sudo apt-get install nginx mysql-server python3-pip python3-dev python3-paramiko python3-venv curl libpq-dev npm libmysqlclient-dev
 
 
   # MySQL setup
@@ -205,9 +203,6 @@ but requires additional configuration to handle IAM based authentication. This c
   sudo rm /etc/nginx/sites-enabled/default
 
   sudo nginx -t && sudo systemctl restart nginx
-
-  sudo ufw delete allow 8000
-  sudo ufw allow 'Nginx Full'
 
   # Nginx trouble shooting
   sudo tail -F /var/log/nginx/error.log

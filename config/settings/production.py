@@ -1,13 +1,13 @@
 import logging
 
-import sentry_sdk
-from sentry_sdk.integrations.celery import CeleryIntegration
-from sentry_sdk.integrations.django import DjangoIntegration
-from sentry_sdk.integrations.logging import LoggingIntegration
-from sentry_sdk.integrations.redis import RedisIntegration
+#import sentry_sdk
+#from sentry_sdk.integrations.celery import CeleryIntegration
+#from sentry_sdk.integrations.django import DjangoIntegration
+#from sentry_sdk.integrations.logging import LoggingIntegration
+#from sentry_sdk.integrations.redis import RedisIntegration
 
 from .base import *  # noqa
-from .base import env
+#from .base import env
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -156,10 +156,15 @@ ADMIN_URL = env("DJANGO_ADMIN_URL")
 
 # AWS SES
 EMAIL_BACKEND = 'django_ses.SESBackend'
+EMAIL_TIMEOUT = 5
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 AWS_SES_REGION_NAME = env("AWS_SES_REGION_NAME", default="us-west-2")
 AWS_SES_REGION_ENDPOINT = env("AWS_SES_REGION_ENDPOINT", default="email.us-west-2.amazonaws.com")
 AWS_SES_ACCESS_KEY_ID = env("AWS_SES_ACCESS_KEY_ID")
 AWS_SES_SECRET_ACCESS_KEY = env("AWS_SES_SECRET_ACCESS_KEY")
+AWS_SES_CONFIGURATION_SET = None
 AWS_SES_AUTO_THROTTLE = None
 AWS_SES_RETURN_PATH = env("AWS_SES_RETURN_PATH", default='lpm0073@gmail.com')
 INSTALLED_APPS = ["django_ses"] + INSTALLED_APPS  # noqa F405
@@ -182,7 +187,7 @@ LOGGING = {
             "format": "%(levelname)s %(asctime)s %(module)s "
             "%(process)d %(thread)d %(message)s"
         },
-        'file': {
+        'simple': {
             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
         }
     },
@@ -195,7 +200,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'formatter': 'file',
+            'formatter': 'verbose',
             'filename': '/var/log/shadetree/app.log',
         },
         'mail_admins': {
