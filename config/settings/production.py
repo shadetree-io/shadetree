@@ -238,6 +238,12 @@ LOGGING = {
     }
 }
 
+# Celery 
+# https://pypi.org/project/django-flower/
+# https://flower.readthedocs.io/en/latest/
+INSTALLED_APPS = ["flower"] + INSTALLED_APPS  # noqa F405
+
+
 # Sentry
 # ------------------------------------------------------------------------------
 # SENTRY_DSN = env("SENTRY_DSN")
