@@ -161,10 +161,8 @@ AWS_SES_REGION_ENDPOINT = env("AWS_SES_REGION_ENDPOINT", default="email.us-west-
 AWS_SES_ACCESS_KEY_ID = env("AWS_SES_ACCESS_KEY_ID")
 AWS_SES_SECRET_ACCESS_KEY = env("AWS_SES_SECRET_ACCESS_KEY")
 AWS_SES_AUTO_THROTTLE = None
+AWS_SES_RETURN_PATH = env("AWS_SES_RETURN_PATH", default='lpm0073@gmail.com')
 INSTALLED_APPS = ["django_ses"] + INSTALLED_APPS  # noqa F405
-
-print('AWS_SES_ACCESS_KEY_ID ' + AWS_SES_ACCESS_KEY_ID)
-print('AWS_SES_SECRET_ACCESS_KEY ' + AWS_SES_SECRET_ACCESS_KEY)
 
 # Collectfast
 # ------------------------------------------------------------------------------
