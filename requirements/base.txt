@@ -29,3 +29,8 @@ elasticsearch>=7.0.0,<8.0.0
 # for PrettyDocs bootstrap font
 django-fontawesome
 python-dotenv
+
+# AWS SES 
+# ------------------------------------------------------------------------------
+boto3
+django-ses[events]
