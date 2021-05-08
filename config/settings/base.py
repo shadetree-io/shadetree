@@ -85,12 +85,12 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "shadetree.users.apps.UsersConfig",
-    "shadetree.api.contributor",
-    "shadetree.api.curator",
-    "shadetree.api.dashboard",
-    "shadetree.api.feed",
-    "shadetree.api.user_profile",
-    "shadetree.api.user_signals",
+    "shadetree.djangoapps.contributor",
+    "shadetree.djangoapps.curator",
+    "shadetree.djangoapps.dashboard",
+    "shadetree.djangoapps.feed",
+    "shadetree.djangoapps.user_profile",
+    "shadetree.djangoapps.user_signals",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",

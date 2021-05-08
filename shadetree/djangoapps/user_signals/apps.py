@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 
 class UserSignalsConfig(AppConfig):
-    name = "shadetree.api.user_signals"
+    name = "shadetree.djangoapps.user_signals"

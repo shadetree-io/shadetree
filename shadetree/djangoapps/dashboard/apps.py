@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class DashboardConfig(AppConfig):
-    name = "shadetree.api.dashboard"
+    name = "shadetree.djangoapps.dashboard"
