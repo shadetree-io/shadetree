@@ -51,8 +51,8 @@ Prerequisite DB Stuff
 
     brew install psequel
     brew install postgresql
-    #brew install openssl       // already installed
-    brew install swig
+    #brew install openssl       # already installed
+    brew install swig           # https://stackoverflow.com/questions/33005354/trouble-installing-m2crypto-with-pip-on-os-x-macos
 
     initdb /usr/local/var/postgres/data -E utf8
     #pg_ctl -D /usr/local/var/postgres start
