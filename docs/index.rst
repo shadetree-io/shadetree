@@ -13,6 +13,9 @@ Welcome to Shade Tree's documentation!
    howto
    pycharm/configuration
    users
+   dev-environment-setup-notes
+   shadetree-production
+   shadetree-production-digitalocean
 
 
 
