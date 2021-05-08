@@ -26,7 +26,8 @@
   sudo apt update
   sudo apt install python3.9
   sudo apt update
-  sudo apt-get install nginx mysql-server python3-pip python3-dev python3-paramiko python3-venv curl libpq-dev npm libmysqlclient-dev
+  sudo apt-get install nginx mysql-server python3-pip python3-dev python3-paramiko python3-venv curl libpq-dev npm libmysqlclient-dev libssl-dev swig
+
 
   # ElasticSearch (EC2 large only)
   # =================================================
