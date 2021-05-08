@@ -91,6 +91,7 @@ LOCAL_APPS = [
     "shadetree.djangoapps.feed",
     "shadetree.djangoapps.user_profile",
     "shadetree.djangoapps.user_signals",
+    "shadetree.djangoapps.parameters",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
