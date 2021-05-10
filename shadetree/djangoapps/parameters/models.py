@@ -10,7 +10,10 @@ class HierarchialPublicationBaseClass(StatusModel, TimeStampedModel):
 
 class Project(HierarchialPublicationBaseClass):
     #slug = models.SlugField(max_length = 200)
-    url = models.URLField(max_length=200)
+    repository_url = models.URLField(max_length=200)
+    branch_spec = models.CharField(max_length=256)  # open-release/*
+    version_spec = models.CharField(max_length=256) # koa.master
+    is_container = BooleanField(default=False)
 
 """
 Package Classes
