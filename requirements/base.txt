@@ -23,7 +23,7 @@ django-cors-headers==3.7.0 # https://github.com/adamchainz/django-cors-headers
 
 # Shade Tree
 # ------------------------------------------------------------------------------
-wagtail==2.12.3
+wagtail>=2.12.4
 elasticsearch>=7.0.0,<8.0.0
 
 # for PrettyDocs bootstrap font
