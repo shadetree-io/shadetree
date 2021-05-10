@@ -21,11 +21,6 @@ django-redis==4.12.1  # https://github.com/jazzband/django-redis
 djangorestframework==3.12.4  # https://github.com/encode/django-rest-framework
 django-cors-headers==3.7.0 # https://github.com/adamchainz/django-cors-headers
 
-# Shade Tree
-# ------------------------------------------------------------------------------
-wagtail>=2.12.4
-elasticsearch>=7.0.0,<8.0.0
-
 # for PrettyDocs bootstrap font
 django-fontawesome
 python-dotenv
@@ -34,3 +29,9 @@ python-dotenv
 # ------------------------------------------------------------------------------
 boto3
 django-ses[events]
+
+# Shade Tree
+# ------------------------------------------------------------------------------
+wagtail>=2.12.4
+elasticsearch>=7.0.0,<8.0.0
+GitPython>=3.1.14
